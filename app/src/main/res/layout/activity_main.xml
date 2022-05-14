@@ -20,7 +20,8 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
-            app:srcCompat="@drawable/logo"></ImageView>
+            app:srcCompat="@drawable/logo">
+        </ImageView>
 
 
     </LinearLayout>
@@ -43,14 +44,13 @@
         android:id="@+id/btnSalvar"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="104dp"
         android:backgroundTint="@color/black"
         android:text="Salvar"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.508"
+        app:layout_constraintHorizontal_bias="0.499"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/radio_um"
-        app:layout_constraintVertical_bias="0.029" />
+        app:layout_constraintTop_toBottomOf="@+id/spEspecializacao" />
 
     <EditText
         android:id="@+id/etData"
@@ -88,16 +88,6 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <RadioGroup
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="101dp"
-        android:orientation="horizontal"
-        app:layout_constraintBottom_toBottomOf="@+id/linearLayout"
-        tools:ignore="MissingConstraints">
-
-
-    </RadioGroup>
 
     <TextView
         android:id="@+id/text_view_selected"
@@ -105,39 +95,44 @@
         android:layout_height="wrap_content"
         android:layout_below="@+id/radioGroup"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="12dp"
+        android:layout_marginTop="8dp"
         android:text="Selecione"
-        android:textSize="20sp"
+        android:textSize="18sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/spEspecializacao"
         tools:ignore="MissingConstraints,UnknownId" />
 
-    <RadioButton
-        android:id="@+id/radio_um"
+
+
+
+    <RadioGroup
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:onClick="checkButton"
-        android:text="Maculino"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.447"
+        android:orientation="horizontal"
+        app:layout_constraintHorizontal_bias="0.512"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/text_view_selected"
-        app:layout_constraintVertical_bias="0.027" />
+        tools:ignore="MissingConstraints">
 
-    <RadioButton
-        android:id="@+id/radio_dois"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:onClick="checkButton"
-        android:text="Feminino"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.064"
-        app:layout_constraintStart_toEndOf="@+id/radio_um"
-        app:layout_constraintTop_toBottomOf="@+id/text_view_selected"
-        app:layout_constraintVertical_bias="0.027" />
+        <RadioButton
+            android:id="@+id/radio_dois"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="checkButton"
+            android:text="Feminino"
+            tools:layout_editor_absoluteX="221dp"
+            tools:layout_editor_absoluteY="441dp" />
 
+        <RadioButton
+            android:id="@+id/radio_um"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="checkButton"
+            android:text="Maculino"
+            tools:layout_editor_absoluteX="59dp"
+            tools:layout_editor_absoluteY="441dp" />
 
+    </RadioGroup>
 </androidx.constraintlayout.widget.ConstraintLayout>
