@@ -1,105 +1,44 @@
 package com.example.medca;
 
-import androidx.annotation.NonNull;
-import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
-
-import android.content.DialogInterface;
+import android.content.Intent;
 import android.os.Bundle;
-import android.view.Menu;
-import android.view.MenuItem;
 import android.view.View;
-import android.widget.ArrayAdapter;
 import android.widget.Button;
-import android.widget.EditText;
-import android.widget.RadioButton;
-import android.widget.RadioGroup;
-import android.widget.Spinner;
-import android.widget.TextView;
 
-import java.util.List;
+
+import com.example.medca.R;
 
 public class MainActivity extends AppCompatActivity {
 
 
-    RadioGroup radioGroup;
-    RadioButton radioButton;
-    TextView textView;
-    private EditText etNome;
-    private EditText etData;
-    private Button btnSalvar;
-
-
-
-
-    private Spinner spEspecializacao;
+    private Button button;
+    private Button button2;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_inicial);
 
-        radioButton= findViewById(R.id.radioGroup);
-        textView= findViewById(R.id.text_view_selected);
-        etNome= findViewById(R.id.etNome);
-        etData= findViewById(R.id.etData);
-        btnSalvar= findViewById(R.id.btnSalvar);
-        spEspecializacao = findViewById(R.id.spEspecializacao);
-        carregarEspecializacao();
-
-    }
-
-    private void carregarEspecializacao(){
-        Especializacao fake = new Especializacao(0, "Selecione a Especialização...");
-        List<Especializacao> lista = EspecializacaoDAO.getEspecializacao(  this );
-        lista.add(0, fake);
-
-        ArrayAdapter adapter = new ArrayAdapter(this, android.R.layout.simple_list_item_1, lista );
-        spEspecializacao.setAdapter( adapter );
-
-    }
-
-
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        menu.add("Cadastrar Especialização...");
-        return super.onCreateOptionsMenu(menu);
-    }
-
-
-    @Override
-    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
-        if( item.toString().equals("Cadastrar Especialização...")){
-            cadastrarEspecializacao();
-        }
-        return super.onOptionsItemSelected(item);
-    }
-
-    private void cadastrarEspecializacao(){
-        AlertDialog.Builder alerta = new AlertDialog.Builder(this);
-        alerta.setTitle("Cadastrar Especializacao");
-        alerta.setIcon(android.R.drawable.ic_input_add);
-
-        EditText etNomeEspecializacao = new EditText(this);
-        etNomeEspecializacao.setHint("Digite aqui a Especialização...");
-        alerta.setView( etNomeEspecializacao );
-
-        alerta.setNeutralButton("Cancelar", null);
-
-        alerta.setPositiveButton("Salvar", new DialogInterface.OnClickListener() {
+        Button button = findViewById(R.id.button);
+        Button button2 = findViewById(R.id.button2);
+        button.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(DialogInterface dialog, int which) {
-                String nome = etNomeEspecializacao.getText().toString();
-                if( !nome.isEmpty() ){
-                    EspecializacaoDAO.inserir(MainActivity.this, nome);
-                    carregarEspecializacao();
-                }
+            public void onClick(View view) {
+                Intent intent = new Intent(MainActivity.this, formularioActivity.class);
+                        intent.putExtra("acao", "inserir");
+                startActivity(intent);
             }
         });
-        alerta.show();
 
+        button2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent1 = new Intent(MainActivity.this, ConsultaActivity.class);
+                //          intent1.putExtra("acao", "editar");
+                startActivity(intent1);
+            }
+        });
     }
 
-    public void checkButton(View view) {
-    }
-}
+ }

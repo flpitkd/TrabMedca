@@ -7,14 +7,8 @@ public class Consulta {
     public Especializacao especializacao;
 
 
-    public Consulta() {
+    public Consulta(String s, String s1, String s2) {
 
-    }
-
-    public Consulta(String nome, String data, Especializacao especializacao) {
-        this.nome = nome;
-        this.data = data;
-        this.especializacao = especializacao;
     }
 
     public Consulta(int id, String nome, String data, Especializacao especializacao) {
@@ -23,6 +17,7 @@ public class Consulta {
         this.data = data;
         this.especializacao = especializacao;
     }
+
 
     @Override
     public String toString() {

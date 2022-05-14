@@ -10,14 +10,14 @@ import java.util.List;
 
 public class ConsultaDAO {
 
-    public static void inserir(Context context, Consulta consulta){
+    public static void inserir(Context context, Consulta consulta) {
         Banco conn = new Banco(context);
         SQLiteDatabase db = conn.getWritableDatabase();
 
         ContentValues valores = new ContentValues();
-        valores.put("nome", consulta.getNome() );
-        valores.put("data", consulta.getData() );
-        valores.put("codesp", consulta.getEspecializacao().getId() );
+        valores.put("nome", consulta.getNome());
+        valores.put("data", consulta.getData());
+        valores.put("codesp", consulta.getEspecializacao().getId());
 
         db.insert("consulta", null, valores);
 
@@ -25,22 +25,22 @@ public class ConsultaDAO {
     }
 
 
-    public static void editar(Context context, Consulta consulta){
+    public static void editar(Context context, Consulta consulta) {
         Banco conn = new Banco(context);
         SQLiteDatabase db = conn.getWritableDatabase();
 
         ContentValues valores = new ContentValues();
-        valores.put("nome", consulta.getNome() );
-        valores.put("data", consulta.getData() );
-        valores.put("codesp", consulta.getEspecializacao().getId() );
+        valores.put("nome", consulta.getNome());
+        valores.put("data", consulta.getData());
+        valores.put("codesp", consulta.getEspecializacao().getId());
 
-        db.update("consulta",  valores, " id = " + consulta.getId(), null);
+        db.update("consulta", valores, " id = " + consulta.getId(), null);
 
         db.close();
     }
 
 
-    public static void excluir(Context context, int idConsulta){
+    public static void excluir(Context context, formularioActivity idConsulta) {
         Banco conn = new Banco(context);
         SQLiteDatabase db = conn.getWritableDatabase();
 
@@ -50,8 +50,7 @@ public class ConsultaDAO {
     }
 
 
-
-    public static List<Consulta> getConsulta(Context context){
+    public static List<Consulta> getConsulta(Context context) {
         Banco conn = new Banco(context);
         SQLiteDatabase db = conn.getReadableDatabase();
 
@@ -60,26 +59,26 @@ public class ConsultaDAO {
                         " FROM consulta c " +
                         " INNER JOIN especializacao e ON e.id = c.codesp " +
                         " ORDER BY c.nome ",
-                null );
+                null);
 
         List<Consulta> lista = new ArrayList<>();
 
-        if( cursor.getCount() > 0 ){
+        if (cursor.getCount() > 0) {
             cursor.moveToFirst();
 
-            do{
+            do {
                 Especializacao e = new Especializacao();
-                e.setId(  cursor.getInt( 3 ) );
-                e.setNome(  cursor.getString( 4 ) );
+                e.setId(cursor.getInt(3));
+                e.setNome(cursor.getString(4));
 
-                Consulta c = new Consulta();
-                c.setId( cursor.getInt(0));
-                c.setNome( cursor.getString(1));
-                c.setData( cursor.getString(2));
-                c.setEspecializacao( e );
+                Consulta c = new Consulta("Lista Vazia...", "", "");
+                c.setId(cursor.getInt(0));
+                c.setNome(cursor.getString(1));
+                c.setData(cursor.getString(2));
+                c.setEspecializacao(e);
 
-                lista.add( c );
-            }while (cursor.moveToNext());
+                lista.add(c);
+            } while (cursor.moveToNext());
         }
         return lista;
     }

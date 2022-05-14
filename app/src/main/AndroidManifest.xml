@@ -11,6 +11,14 @@
         android:theme="@style/Theme.Medca">
 
         <activity
+            android:name=".formularioActivity"
+            android:exported="true" />
+
+        <activity
+            android:name=".ConsultaActivity"
+            android:exported="true" />
+
+        <activity
             android:name=".MainActivity"
             android:exported="true">
             <intent-filter>
