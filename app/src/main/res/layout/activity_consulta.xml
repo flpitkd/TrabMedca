@@ -37,6 +37,6 @@
         android:layout_gravity="center_horizontal"
         android:id="@+id/btnAdicionar"
         android:backgroundTint="@color/black"
-        android:text="Cadastrar Nova Consulta"/>
+        android:text="@string/txtNova"/>
 
 </LinearLayout>
