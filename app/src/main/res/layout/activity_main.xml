@@ -14,7 +14,7 @@
         android:orientation="vertical"
         app:layout_constraintTop_toTopOf="parent"
         tools:layout_editor_absoluteX="0dp">
-
+//teste
         <ImageView
             android:id="@+id/imageView5"
             android:layout_width="match_parent"
@@ -33,7 +33,7 @@
         android:layout_marginTop="120dp"
         android:background="@drawable/cantos"
         android:gravity="center"
-        android:text="Agendar \nConsulta"
+        android:text="Agendar \nConsulta!"
         android:textColor="@color/white"
         android:textSize="22dp"
         app:layout_constraintEnd_toEndOf="parent"
