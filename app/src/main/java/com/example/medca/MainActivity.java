@@ -21,9 +21,15 @@ import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
 
+
     RadioGroup radioGroup;
     RadioButton radioButton;
     TextView textView;
+    private EditText etNome;
+    private EditText etData;
+    private Button btnSalvar;
+
+
 
 
     private Spinner spEspecializacao;
@@ -35,12 +41,10 @@ public class MainActivity extends AppCompatActivity {
 
         radioButton= findViewById(R.id.radioGroup);
         textView= findViewById(R.id.text_view_selected);
-
-
-
-
+        etNome= findViewById(R.id.etNome);
+        etData= findViewById(R.id.etData);
+        btnSalvar= findViewById(R.id.btnSalvar);
         spEspecializacao = findViewById(R.id.spEspecializacao);
-
         carregarEspecializacao();
 
     }

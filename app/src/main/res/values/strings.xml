@@ -5,9 +5,9 @@
     <string name="txtselecione">Selecione</string>
     <string name="txtFeminino">Feminino</string>
     <string name="txtMasculino">Masculino</string>
-    <string name="txtAgendar">Agendar /nConsulta </string>
+    <string name="txtAgendar">Agendar \nConsulta </string>
     <string name="txtSalvar">Salvar</string>
-    <string name="txtCadastro">Cadastro de /nConsultas</string>
+    <string name="txtCadastro">Cadastro de \nConsultas</string>
     <string name="txtCadastrar">Cadastrar Consulta</string>
     <string name="txtListar">Listar consultas</string>
     <string name="txtNova">Cadastrar nova Consulta </string>
