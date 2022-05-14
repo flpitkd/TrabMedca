@@ -14,7 +14,7 @@
         android:orientation="vertical"
         app:layout_constraintTop_toTopOf="parent"
         tools:layout_editor_absoluteX="0dp">
-//teste
+
         <ImageView
             android:id="@+id/imageView5"
             android:layout_width="match_parent"
@@ -44,10 +44,11 @@
         android:id="@+id/btnSalvar"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="56dp"
-        android:text="Salvar"
+        android:layout_marginTop="104dp"
         android:backgroundTint="@color/black"
+        android:text="Salvar"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.499"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/spEspecializacao" />
 
@@ -60,7 +61,7 @@
         android:hint="Digite aqui a Data de Nascimento..."
         android:inputType="textPersonName"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.483"
+        app:layout_constraintHorizontal_bias="0.509"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/etNome" />
 
@@ -70,7 +71,7 @@
         android:layout_height="29dp"
         android:layout_marginTop="24dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.571"
+        app:layout_constraintHorizontal_bias="0.512"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/etData" />
 
@@ -86,5 +87,45 @@
         app:layout_constraintHorizontal_bias="0.508"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+        <RadioGroup
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            tools:ignore="MissingConstraints"
+            android:orientation="vertical">
+
+
+            <RadioButton
+                android:id="@+id/radio_dois"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:onClick="checkButton"
+                android:text="Feminino"
+                tools:layout_editor_absoluteX="446dp"
+                tools:layout_editor_absoluteY="425dp" />
+
+            <RadioButton
+                android:id="@+id/radio_um"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:onClick="checkButton"
+                android:text="Maculino"
+                tools:layout_editor_absoluteX="585dp"
+                tools:layout_editor_absoluteY="428dp" />
+
+
+        </RadioGroup>
+
+        <TextView
+            android:id="@+id/text_view_selected"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/radioGroup"
+            android:layout_centerHorizontal= "true"
+            android:layout_marginTop="27dp"
+            android:text="Selecione"
+            android:textSize="20sp"
+            tools:ignore="MissingConstraints,UnknownId" />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

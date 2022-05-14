@@ -8,13 +8,23 @@ import android.content.DialogInterface;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.EditText;
+import android.widget.RadioButton;
+import android.widget.RadioGroup;
 import android.widget.Spinner;
+import android.widget.TextView;
 
 import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
+
+    RadioGroup radioGroup;
+    RadioButton radioButton;
+    TextView textView;
+
 
     private Spinner spEspecializacao;
 
@@ -22,6 +32,12 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        radioButton= findViewById(R.id.radioGroup);
+        textView= findViewById(R.id.text_view_selected);
+
+
+
 
         spEspecializacao = findViewById(R.id.spEspecializacao);
 
@@ -78,5 +94,8 @@ public class MainActivity extends AppCompatActivity {
         });
         alerta.show();
 
+    }
+
+    public void checkButton(View view) {
     }
 }
